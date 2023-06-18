@@ -26,6 +26,7 @@ const checkwin = ()=>{
             document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won"
             isGameOver = true;
             document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "300px"
+            gameover.play()
         }
     });
 }
@@ -47,4 +48,16 @@ Array.from(boxes).forEach(element => {
         }
     })
 });
+
+// onclick listener to reset button
+reset.addEventListener('click', ()=>{
+    let boxtext = document.querySelectorAll('.boxtext');
+    Array.from(boxtext).forEach(element => {
+        element.innerText = "";
+        turn = "X";
+        isGameOver = false;
+        document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
+        document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0"
+    })
+})
 
