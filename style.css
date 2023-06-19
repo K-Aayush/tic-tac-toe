@@ -29,6 +29,7 @@ nav ul{
     grid-template-rows: repeat(3, 10vw);
     grid-template-columns: repeat(3, 10vw);
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
 }
 
 .box{
@@ -83,4 +84,13 @@ nav ul{
     cursor: pointer;
     font-size: 15px;
     font-weight: bolder;
+}
+
+.line{
+    background-color: black;
+    width: 0;
+    height: 3px;
+    background-color: red;
+    position: absolute;
+    transition: width 1s ease-in-out;
 }
